@@ -45,3 +45,14 @@ mysql> select Name as Purple_Cap,sum(Wickets) from player group by Name order by
 | Yuvraj Singh |            4 |
 +--------------+--------------+
 1 row in set (0.00 sec)
+mysql> select Name, sum(Runs)/count(Matchdate) from player group by Name;
++--------------+----------------------------+
+| Name         | sum(Runs)/count(Matchdate) |
++--------------+----------------------------+
+| A. Rayudu    |                    42.6667 |
+| MS Dhoni     |                    38.0000 |
+| Rohit Sharma |                    23.0000 |
+| V. Kohli     |                   146.0000 |
+| Yuvraj Singh |                   102.0000 |
++--------------+----------------------------+
+5 rows in set (0.00 sec)
