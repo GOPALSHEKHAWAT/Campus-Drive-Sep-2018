@@ -1,0 +1,47 @@
+mysql> select * from player;
++--------------+--------------+---------+------+------------+
+| Name         | Team         | Wickets | Runs | Matchdate  |
++--------------+--------------+---------+------+------------+
+| Rohit Sharma | Team Mumbai  |       1 |   23 | 2018-01-10 |
+| MS Dhoni     | Team Chennai |       0 |   42 | 2018-01-10 |
+| Yuvraj Singh | Team Pune    |       4 |  102 | 2018-01-11 |
+| V. Kohli     | Team Pune    |       0 |  146 | 2018-01-11 |
+| A. Rayudu    | Team Chennai |       3 |   58 | 2018-01-10 |
+| MS Dhoni     | Team Chennai |       1 |   34 | 2018-01-11 |
+| A. Rayudu    | Team Chennai |       0 |   58 | 2018-01-11 |
++--------------+--------------+---------+------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from Ipl_m;
++------------+--------------+--------------+
+| D          | Team1        | Team2        |
++------------+--------------+--------------+
+| 2018-01-10 | Team Mumbai  | Team Chennai |
+| 2018-01-11 | Team Chennai | Team Pune    |
++------------+--------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Teams;
++--------------+---------+
+| Team         | Players |
++--------------+---------+
+| Team Mumbai  |       1 |
+| Team Chennai |       2 |
+| Team Pune    |       2 |
++--------------+---------+
+3 rows in set (0.00 sec)
+mysql> select Name as Orange_Cap,sum(Runs) from player group by Name order by sum(Runs) desc limit 1;
++------------+-----------+
+| Orange_Cap | sum(Runs) |
++------------+-----------+
+| V. Kohli   |       146 |
++------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select Name as Purple_Cap,sum(Wickets) from player group by Name order by sum(Wickets) desc limit 1;
++--------------+--------------+
+| Purple_Cap   | sum(Wickets) |
++--------------+--------------+
+| Yuvraj Singh |            4 |
++--------------+--------------+
+1 row in set (0.00 sec)
