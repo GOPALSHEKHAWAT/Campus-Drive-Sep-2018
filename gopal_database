@@ -56,3 +56,34 @@ mysql> select Name, sum(Runs)/count(Matchdate) from player group by Name;
 | Yuvraj Singh |                   102.0000 |
 +--------------+----------------------------+
 5 rows in set (0.00 sec)
+mysql> insert into player values ('V.kohli', 'Team Mumbai',0,27,'2019-02-20','s2');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from player;
++--------------+--------------+---------+------+------------+--------+
+| Name         | Team         | Wickets | Runs | Matchdate  | season |
++--------------+--------------+---------+------+------------+--------+
+| Rohit Sharma | Team Mumbai  |       1 |   23 | 2018-01-10 | s1     |
+| MS Dhoni     | Team Chennai |       0 |   42 | 2018-01-10 | s1     |
+| Yuvraj Singh | Team Pune    |       4 |  102 | 2018-01-11 | s1     |
+| V. Kohli     | Team Pune    |       0 |  146 | 2018-01-11 | s1     |
+| A. Rayudu    | Team Chennai |       3 |   58 | 2018-01-10 | s1     |
+| MS Dhoni     | Team Chennai |       1 |   34 | 2018-01-11 | s1     |
+| A. Rayudu    | Team Chennai |       0 |   58 | 2018-01-11 | s1     |
+| A. Rayudu    | Team Chennai |       1 |   12 | 2018-01-12 | s1     |
+| Rohit Sharma | Team Mumbai  |       0 |   27 | 2019-02-20 | s2     |
+| V.kohli      | Team Mumbai  |       0 |   27 | 2019-02-20 | s2     |
++--------------+--------------+---------+------+------------+--------+
+10 rows in set (0.00 sec)
+select Name,sum(Runs) from player group by Name;
++--------------+-----------+
+| Name         | sum(Runs) |
++--------------+-----------+
+| A. Rayudu    |       128 |
+| MS Dhoni     |        76 |
+| Rohit Sharma |        50 |
+| V. Kohli     |       173 |
+| Yuvraj Singh |       102 |
++--------------+-----------+
+5 rows in set (0.00 sec)
+
